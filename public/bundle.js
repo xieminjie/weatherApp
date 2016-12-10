@@ -24835,7 +24835,15 @@
 			'div',
 			null,
 			React.createElement(Nav, null),
-			props.children
+			React.createElement(
+				'div',
+				{ className: 'row' },
+				React.createElement(
+					'div',
+					{ className: 'columns medium-6 large-4 small-centered' },
+					props.children
+				)
+			)
 		);
 	};
 
@@ -24979,7 +24987,7 @@
 				if (isLoading) {
 					return React.createElement(
 						'h3',
-						null,
+						{ className: 'text-center' },
 						'Fetching weather...'
 					);
 				} else if (temp && location) {
@@ -24989,6 +24997,11 @@
 			return React.createElement(
 				'div',
 				null,
+				React.createElement(
+					'h1',
+					{ className: 'text-center' },
+					'Get Weather'
+				),
 				React.createElement(WeatherForm, { onSearch: this.handleSearch }),
 				renderMessage()
 			);
@@ -25028,7 +25041,7 @@
 	        React.createElement("input", { type: "text", ref: "location" }),
 	        React.createElement(
 	          "button",
-	          null,
+	          { className: "button expanded hollow" },
 	          "Get Weather"
 	        )
 	      )
@@ -25042,12 +25055,12 @@
 /* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	var React = __webpack_require__(8);
 
 	var WeatherMessage = React.createClass({
-	  displayName: 'WeatherMessage',
+	  displayName: "WeatherMessage",
 
 	  render: function render() {
 	    var _props = this.props,
@@ -25055,13 +25068,13 @@
 	        location = _props.location;
 
 	    return React.createElement(
-	      'h3',
-	      null,
-	      'It\'s it ',
+	      "h3",
+	      { className: "text-center" },
+	      "It's it ",
 	      temp,
-	      ' in ',
+	      " in ",
 	      location,
-	      '.'
+	      "."
 	    );
 	  }
 	});
@@ -26595,7 +26608,7 @@
 		return React.createElement(
 			'h3',
 			null,
-			'About Components'
+			'This is Min web app'
 		);
 	};
 
@@ -26609,14 +26622,45 @@
 
 	var React = __webpack_require__(8);
 	var Nav = __webpack_require__(223);
+
+	var _require = __webpack_require__(166),
+	    Link = _require.Link;
+
 	var Examples = function Examples(props) {
 		return React.createElement(
 			'div',
 			null,
 			React.createElement(
-				'h2',
+				'h1',
+				{ className: 'text-center' },
+				'Examples'
+			),
+			React.createElement(
+				'p',
 				null,
-				'Examples Component!'
+				'Here are a few examples locations to try out:'
+			),
+			React.createElement(
+				'ol',
+				null,
+				React.createElement(
+					'li',
+					null,
+					React.createElement(
+						Link,
+						{ to: '/?location=Philadelphia' },
+						'Philadelphia, PA'
+					)
+				),
+				React.createElement(
+					'li',
+					null,
+					React.createElement(
+						Link,
+						{ to: '/?location=Shanghai' },
+						'Shanghai'
+					)
+				)
 			)
 		);
 	};
