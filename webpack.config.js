@@ -29,7 +29,10 @@ module.exports = {
       Examples:'app/components/Examples.jsx',
       WeatherForm:'app/components/WeatherForm.jsx',
       WeatherMessage:'app/components/WeatherMessage.jsx',
-      openWeatherMap:'api/openWeatherMap.jsx'
+      openWeatherMap:'api/openWeatherMap.jsx',
+      ErrorModal:'app/components/ErrorModal.jsx',
+      Contact:'app/components/Contact.jsx',
+      applicationStyles: 'app/styles/app.scss'
     },
     extensions: ['', '.js', '.jsx']
   },
